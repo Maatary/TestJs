@@ -4,6 +4,9 @@
 * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=gloss_wave&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=highlight_soft&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=glass&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=glass&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=highlight_soft&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=diagonals_thick&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=diagonals_thick&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=flat&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px
 * Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
 
+
+
+
 /* Layout helpers
 ----------------------------------*/
 .ui-helper-hidden {
@@ -118,6 +121,15 @@
 	left: 0;
 	cursor: default;
 }
+
+.ui-autocomplete-input {
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: default;
+	width: 512px;
+}
+
 .ui-button {
 	display: inline-block;
 	position: relative;
@@ -452,24 +464,71 @@ button.ui-button::-moz-focus-inner {
 	touch-action: none;
 }
 .ui-menu {
-	list-style: none;
+/*	list-style: none;
 	padding: 0;
 	margin: 0;
 	display: block;
-	outline: none;
+	outline: none;*/
+
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+
+	/*width: 100%;*/
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 .ui-menu .ui-menu {
 	position: absolute;
 }
+
+
 .ui-menu .ui-menu-item {
-	position: relative;
+/*	position: relative;
 	margin: 0;
 	padding: 3px 1em 3px .4em;
 	cursor: pointer;
-	min-height: 0; /* support: IE7 */
-	/* support: IE10, see #8844 */
-	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+	min-height: 0; /!* support: IE7 *!/
+	/!* support: IE10, see #8844 *!/
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");*/
+
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/*
+	if width will be 100% horizontal scrollbar will apear
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/*
+	it is very important, if line-height not setted or setted
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
 }
+.ui-menu .ui-menu-item.ui-state-focus a {
+	color: inherit !important;
+	font-weight: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.ui-menu .ui-menu-item.ui-state-focus  {
+	background:none!important;
+	border:none!important;
+	color: black !important;
+	font-weight: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #BBCEF1 !important;
+}
+
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
 	height: 0;
@@ -480,6 +539,7 @@ button.ui-button::-moz-focus-inner {
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
 	margin: -1px;
+
 }
 
 /* icon support */
