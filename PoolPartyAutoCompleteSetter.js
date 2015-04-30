@@ -2,47 +2,8 @@
  * Created by Daniel Maatary on 4/22/15.
  */
 
-function getsuggestion($, searchString) {
 
-    $.ajax({
-            url: "http://thesaurus.iadb.org/extractor/api/suggest",
-
-            data: {projectId: "1DCE031A-B429-0001-49B6-15A028B01F5D", language: "en", searchString: searchString},
-
-            username: 'superadmin',
-            password: 'poolparty',
-
-            dataType: 'json',
-            crossDomain: true,
-
-
-            beforeSend: function(req) {
-                req.setRequestHeader('Authorization', 'Basic ' + btoa('superadmin:poolparty'));
-            },
-
-            xhrFields: {
-                withCredentials: true
-            },
-
-            error: function( jqXHR, textStatus, errorThrown ) {
-
-                $("body").append("<p>" + textStatus + "<p>")
-            },
-
-            success:  function( data, textStatus, jqXHR ) {
-
-                var formatteddata = { label: data.suggestedConcepts[0].matchingLabel, value: data.suggestedConcepts[0]}
-
-                $("body").append("<p>" + JSON.stringify(data) + "<p>")
-
-            }
-        }
-    )
-
-}
-
-
-function set_authors_autocomplete ($) {
+function set_autocomplete ($) {
 
     $("#search_authors").autocomplete({
 
@@ -115,13 +76,7 @@ function set_authors_autocomplete ($) {
     }
 }
 
-
-
-
-
-
-
 $(document).ready(function(){
 
-    set_authors_autocomplete($)
+    set_autocomplete($)
 });
