@@ -3,7 +3,7 @@
  */
 
 
-function set_autocomplete ($) {
+function set_autocomplete ($, select) {
 
     $("#search_authors").autocomplete({
 
@@ -52,10 +52,7 @@ function set_autocomplete ($) {
 
         minLength: 2,
 
-        select: function (event, ui) {
-           $( "#search_authors" ).val( ui.item.value)
-            alert(JSON.stringify(ui.item.mydata))
-        },
+        select: select,
 
 
         html: true,
@@ -76,7 +73,3 @@ function set_autocomplete ($) {
     }
 }
 
-$(document).ready(function(){
-
-    set_autocomplete($)
-});

@@ -7,12 +7,19 @@
     <script src="PoolPartyAutoCompleteSetter.js"></script>
     <link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui-modified.css">
     <link rel="stylesheet" href="brik.css">
-    <style>
 
+    <script>
 
+        function select (event, ui) {
+            $( "#search_authors" ).val( ui.item.value)
+            alert(JSON.stringify(ui.item.mydata))
+        }
 
+        $(document).ready(function(){
 
-    </style>
+            set_autocomplete($, select)
+        });
+    </script>
 
 
 </head>
