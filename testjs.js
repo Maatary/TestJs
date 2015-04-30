@@ -79,6 +79,8 @@ function set_authors_autocomplete ($) {
 
                     for(i = 0; i < data.suggestedConcepts.length; i++) {
                         datatable[i] = {label: data.suggestedConcepts[i].matchingLabel, value: data.suggestedConcepts[i].prefLabel, mydata: data.suggestedConcepts[i]}
+                        datatable[i].label = datatable[i].label.replace("<em>", "<strong class = \"ac_highlight\">")
+                        datatable[i].label = datatable[i].label.replace("</em>", "</strong>")
                         //TODO Filter conceptsSchemes table object
                     }
 
@@ -113,9 +115,6 @@ function set_authors_autocomplete ($) {
 
 
 $(document).ready(function(){
-    //getsuggestion($, "for");
-
-    //$("#search_authors").val("type authors here")
 
     set_authors_autocomplete($)
 });
