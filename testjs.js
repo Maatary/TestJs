@@ -105,7 +105,14 @@ function set_authors_autocomplete ($) {
         close: function () {
             $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
         }
-    })
+    }).autocomplete("instance")._renderMenu = function( ul, items ) {
+        var that = this;
+        $.each( items, function( index, item ) {
+            that._renderItemData( ul, item );
+        });
+        $( ul ).find( "li:odd" ).addClass( "ac_odd" );
+
+    }
 }
 
 
