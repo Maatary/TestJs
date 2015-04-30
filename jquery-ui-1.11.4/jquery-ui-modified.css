@@ -120,6 +120,16 @@
 	top: 0;
 	left: 0;
 	cursor: default;
+
+	padding: 0px;
+
+	border: 1px solid black!important;
+
+	background-color: white!important;
+	background: none!important;
+
+	overflow: hidden;
+	z-index: 99999;
 }
 
 /*.ui-autocomplete-input {
@@ -464,18 +474,6 @@ button.ui-button::-moz-focus-inner {
 	touch-action: none;
 }
 .ui-menu {
-/*	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: block;
-	outline: none;*/
-
-	padding: 0px;
-	border: 1px solid black;
-	background-color: white;
-	overflow: hidden;
-	z-index: 99999;
-
 	/*width: 100%;*/
 	list-style-position: outside;
 	list-style: none;
@@ -528,6 +526,22 @@ button.ui-button::-moz-focus-inner {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	background-color: #BBCEF1 !important;
 }
+
+.ui-menu .ui-menu-item .ac_highlight {
+	background-color: #E6FF99!important;
+}
+
+.ui-menu .ui-menu-item.ac_odd {
+	background-color: #eee;
+}
+
+/*.ac_loading {
+	background: white url('../../images/loading.gif') right center no-repeat;
+}*/
+
+
+
+
 
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
