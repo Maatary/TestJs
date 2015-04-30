@@ -3,9 +3,9 @@
  */
 
 
-function set_autocomplete ($, select) {
+function set_autocomplete ($, select, $input) {
 
-    $("#search_authors").autocomplete({
+    $input.autocomplete({
 
         source: function (request, response) {
 

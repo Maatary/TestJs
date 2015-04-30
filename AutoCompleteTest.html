@@ -1,12 +1,14 @@
 <html>
 <head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery-ui-1.11.4/external/jquery-1.10.2/jquery.min-1.10.2.js"></script>
     <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
     <script src="jquery-ui-1.11.4/plugins/jquery.ui.autocomplete-html.js"></script>
     <script src="PoolPartyAutoCompleteSetter.js"></script>
     <link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui-modified.css">
-    <link rel="stylesheet" href="brik.css">
+
+
+    <link rel="stylesheet" href="brik.css"> <!--Will be supplied by BRIK-->
 
     <script>
 
@@ -17,7 +19,7 @@
 
         $(document).ready(function(){
 
-            set_autocomplete($, select)
+            set_autocomplete($, select, $("#search_authors"))
         });
     </script>
 
