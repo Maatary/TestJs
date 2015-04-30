@@ -132,6 +132,12 @@
 	z-index: 99999;
 }
 
+.ui-autocomplete-loading
+{
+	background: url(images/loading.gif) no-repeat right center;
+
+}
+
 /*.ui-autocomplete-input {
 	position: relative;
 	top: 0;
