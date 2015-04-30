@@ -2,8 +2,14 @@
 
 /*Simulating some Brik CSS*/
 
-
+/*The input component*/
 .submit-text {
     width: 540px;
     font-size: 13px;
+}
+
+input, textarea {
+    margin-top: 8px;
+    font-size: 12px;
+    padding: 3px;
 }
