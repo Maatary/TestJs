@@ -126,7 +126,7 @@
 	border: 1px solid black!important;
 
 	background-color: white!important;
-	background: none!important;
+	background-image: none!important;
 
 	overflow: hidden;
 	z-index: 99999;

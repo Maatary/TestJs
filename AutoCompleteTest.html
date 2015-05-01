@@ -13,7 +13,7 @@
     <script>
 
         function select (event, ui) {
-            $( "#search_authors" ).val( ui.item.value)
+            $(this).val( ui.item.value)
             alert(JSON.stringify(ui.item.mydata))
         }
 
@@ -27,13 +27,15 @@
 </head>
 
 
+
+
+
+<body style="background-color: lightsalmon">
+
 <div>
     <div id="authors"> Authors  <input id="search_authors" class="submit-text" type="text"> </input> </div>
-
 </div>
 
-
-<body>
 </body>
 </html>
 
