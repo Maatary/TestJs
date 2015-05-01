@@ -13,8 +13,10 @@
     <script>
 
         function select (event, ui) {
-            $(this).val( ui.item.value)
-            alert(JSON.stringify(ui.item.mydata))
+
+            $(this).val('')
+            return false
+            //alert(JSON.stringify(ui.item.mydata))
         }
 
         $(document).ready(function(){
